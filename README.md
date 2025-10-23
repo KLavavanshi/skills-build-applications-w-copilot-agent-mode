@@ -1,16 +1,41 @@
-# Build Applications with GitHub Copilot Agent Mode
+# OctoFit Tracker App
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+This repository contains the scaffold for the OctoFit Tracker App.
 
-Hey KLavavanshi!
+## Project structure
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+- README.md
+- requirements.txt
+- .gitignore
+- src/octofit/
+  - __init__.py
+  - main.py
+- scripts/
+  - create_venv.sh
+- .github/workflows/ci.yml
 
-Remember, it's self-paced so feel free to take a break! ☕️
+## Python virtual environment and installation
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/KLavavanshi/skills-build-applications-w-copilot-agent-mode/issues/1)
+1. Create a virtual environment (Unix/macOS):
 
----
+   python3 -m venv .venv
+   source .venv/bin/activate
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+   On Windows (PowerShell):
 
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+
+2. Upgrade pip and install requirements:
+
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+
+3. Run the app (development):
+
+   uvicorn octofit.main:app --reload --host 127.0.0.1 --port 8000
+
+## Notes
+
+- A helper script is provided at scripts/create_venv.sh to create the venv and install the requirements on Unix-like systems.
+- The repository includes a GitHub Actions workflow that sets up Python and installs requirements on push to build-octofit-app.
